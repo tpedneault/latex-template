@@ -1,0 +1,53 @@
+\documentclass[10pt]{article}
+
+\usepackage[letterpaper, width=6in, height=8in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{blindtext}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{15.2pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\makeatletter
+\lhead{\course}
+\chead{\@title}
+\rhead{\@author}
+\lfoot{\today}
+\rfoot{Page \thepage \hspace{1pt} of \pageref{LastPage}} 
+\makeatother
+
+% Fill in these variables.
+\newcommand{\course}{[COURSE NUMBER]}
+\title{[ASSIGNMENT NAME]}
+\author{[AUTHOR NAME]}
+\date{\today}
+
+\begin{document}
+	\blinddocument
+	\section{Programming}
+	\subsection{Example for pseudo-code (algorithm)}
+	\begin{algorithm}
+		\caption{An algorithm with caption}\label{alg:cap}
+		\begin{algorithmic}[1]
+			\Require $n \geq 0$
+			\Ensure $y = x^n$
+			\State $y \gets 1$ \Comment{This is a comment}
+			\State $X \gets x$
+			\State $N \gets n$
+			\While{$N \neq 0$}
+			\If{$N$ is even}
+			\State $X \gets X \times X$
+			\State $N \gets \frac{N}{2}$  \Comment{This is another comment}
+			\ElsIf{$N$ is odd}
+			\State $y \gets y \times X$
+			\State $N \gets N - 1$
+			\EndIf
+			\EndWhile
+		\end{algorithmic}
+	\end{algorithm}
+\end{document}
